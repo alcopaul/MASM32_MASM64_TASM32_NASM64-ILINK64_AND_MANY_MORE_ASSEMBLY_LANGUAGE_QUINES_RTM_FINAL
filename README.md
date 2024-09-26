@@ -24,10 +24,15 @@ NASMWin64Win32DOS16spcsp4cesulfur16NASMMacOS32bit64bitSnowLeopardSnowLeopard64.T
 - quineB_S_D.asm
 
 GOAT.asm
+
 ARIES.asm
+
 benu.asm
+
 firebird.asm
+
 fenghuang.asm
+
 csp.asm (2/27/2023-9/23/2024)
 
 ### What are quines? ###
