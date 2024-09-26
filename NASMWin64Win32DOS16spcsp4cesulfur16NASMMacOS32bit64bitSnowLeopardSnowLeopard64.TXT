@@ -1,0 +1,601 @@
+;
+; spc.asm
+;
+; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 10/5/2021 .revision = 1/27/2023
+;
+; nasm -f win64 spc.asm
+; link spc.obj /subsystem:console /defaultlib:msvcrt64.lib /entry:m /largeaddressaware:no
+;
+global m
+extern printf
+section .text
+m:sub rsp,28h
+mov al,10
+mov bl,95
+z:lea r9,a
+mov dx,567
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],al
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdx,a
+lea rcx,i
+call printf
+mov al,10
+cmp bl,95
+xchg al,bl
+je z
+lea rdx,x
+lea rcx,i
+call printf
+add rsp,28h
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';_; spc.asm_;_; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; 10/5/2021 .revision = 1/27/2023_;_; nasm -f win64 spc.asm_; link spc.obj /subsystem:console /defaultlib:msvcrt64.lib /entry:m /largeaddressaware:no_;_global m_extern printf_section .text_m:sub rsp,28h_mov al,10_mov bl,95_z:lea r9,a_mov dx,567_r:cmp byte[r9],bl_je s_jmp u_s:mov byte[r9],al_u:inc r9_dec dx_cmp dx,0_jnz r_lea rdx,a_lea rcx,i_call printf_mov al,10_cmp bl,95_xchg al,bl_je z_lea rdx,x_lea rcx,i_call printf_add rsp,28h_ret_section .data_x:db 2Ch,32h,37h,68h,2Ch,30h,0_i:db 25h,73h,0_a:db ',27h,0
+
+;
+; sp4ce.asm
+;
+; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 10/6/2021 .revision = 1/27/2023
+;
+; nasm <dash>f win32 sp4ce.asm
+; link sp4ce.obj /subsystem:console /defaultlib:32msvcrt.lib /entry:m
+;
+global m
+extern _printf
+section .text
+m:enter 0,0
+mov al,10
+mov bl,45
+z:lea edx,a
+mov cx,543
+r:cmp byte[edx],bl
+je s
+jmp u
+s:mov byte[edx],al
+u:inc edx
+dec cx
+cmp cx,0
+jnz r
+push a
+push i
+call _printf
+mov al,10
+cmp bl,45
+xchg al,bl
+je z
+push x
+push i
+call _printf
+leave
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';-; sp4ce.asm-;-; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; 10/6/2021 .revision = 1/27/2023-;-; nasm <dash>f win32 sp4ce.asm-; link sp4ce.obj /subsystem:console /defaultlib:32msvcrt.lib /entry:m-;-global m-extern _printf-section .text-m:enter 0,0-mov al,10-mov bl,45-z:lea edx,a-mov cx,543-r:cmp byte[edx],bl-je s-jmp u-s:mov byte[edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call _printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call _printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+;
+; sulfur16.asm
+;
+; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 10/7/2021 .revision 2 = 2/1/2023
+;
+; nasm <dash>f bin <dash>o sulfur16.com sulfur16.asm
+;
+org 100h
+mov al,13
+mov ah,45
+z:lea bx,[k]
+mov cx,551
+r:cmp byte[bx],ah
+je s
+jmp u
+s:mov byte[bx],al
+cmp al,45
+je c
+mov byte[bx+1],10
+jmp u
+c:mov byte[bx+1],45
+u:inc bx
+dec cx
+cmp cx,0
+jnz r
+push ax
+lea dx,[k]
+mov ah,9
+int 21h
+pop ax
+cmp al,13
+mov ah,45
+xchg al,ah
+je z
+lea dx,[x]
+mov ah,9
+int 21h
+int 20h
+x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h
+k:db ';--; sulfur16.asm--;--; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]--; 10/7/2021 .revision 2 = 2/1/2023--;--; nasm <dash>f bin <dash>o sulfur16.com sulfur16.asm--;--org 100h--mov al,13--mov ah,45--z:lea bx,[k]--mov cx,551--r:cmp byte[bx],ah--je s--jmp u--s:mov byte[bx],al--cmp al,45--je c--mov byte[bx+1],10--jmp u--c:mov byte[bx+1],45--u:inc bx--dec cx--cmp cx,0--jnz r--push ax--lea dx,[k]--mov ah,9--int 21h--pop ax--cmp al,13--mov ah,45--xchg al,ah--je z--lea dx,[x]--mov ah,9--int 21h--int 20h--x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h--k:db ',27h,24h
+
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; January 25, 2023 NYC
+; nasm <dash>f macho <dash>o GosuIchiban.o SnowLeopard.asm
+; ld <dash>arch i386 <dash>macosx_version_min 10.4 <dash>lc /usr/lib/crt1.o <dash>o GesuIchIvan GosuIchiban.o
+global _main
+extern _printf
+section .text
+_main:
+enter 0,0
+mov al,10
+mov bl,45
+z:lea edx,[a]
+mov cx,596
+r:cmp byte [edx],bl
+je s
+jmp u
+s:mov byte [edx],al
+u:inc edx
+dec cx
+cmp cx,0
+jnz r
+push a
+push i
+call _printf
+mov al,10
+cmp bl,45
+xchg al,bl
+je z
+push x
+push i
+call _printf
+leave
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db '; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; January 25, 2023 NYC-; nasm <dash>f macho <dash>o GosuIchiban.o SnowLeopard.asm-; ld <dash>arch i386 <dash>macosx_version_min 10.4 <dash>lc /usr/lib/crt1.o <dash>o GesuIchIvan GosuIchiban.o-global _main-extern _printf-section .text-_main:-enter 0,0-mov al,10-mov bl,45-z:lea edx,[a]-mov cx,596-r:cmp byte [edx],bl-je s-jmp u-s:mov byte [edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call _printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call _printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; January 26, 2023 NYC
+; ./nasm <dash>f macho64 <dash>o 6GosuIchiban4.o SnowLeopard64.asm
+; ld <dash>arch x86_64  <dash>macosx_version_min 10.4 <dash>lc /usr/lib/crt1.o <dash>o 6GesuIchIvan4 6GosuIchiban4.o
+global _main
+extern _printf
+section .text
+_main:push rbx
+mov cl,10
+mov bl,45
+z:lea r9,[a]
+mov dx,685
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],cl
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdi,[i]
+lea rax,[a]
+mov rsi,rax
+xor rax,rax
+call _printf
+mov cl,10
+cmp bl,45
+xchg cl,bl
+je z
+lea rdi,[i]
+lea rax,[x]
+mov rsi,rax
+xor rax,rax
+call _printf
+pop rbx
+ret
+section .data
+default rel
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db '; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; January 26, 2023 NYC-; ./nasm <dash>f macho64 <dash>o 6GosuIchiban4.o SnowLeopard64.asm-; ld <dash>arch x86_64  <dash>macosx_version_min 10.4 <dash>lc /usr/lib/crt1.o <dash>o 6GesuIchIvan4 6GosuIchiban4.o-global _main-extern _printf-section .text-_main:push rbx-mov cl,10-mov bl,45-z:lea r9,[a]-mov dx,685-r:cmp byte[r9],bl-je s-jmp u-s:mov byte[r9],cl-u:inc r9-dec dx-cmp dx,0-jnz r-lea rdi,[i]-lea rax,[a]-mov rsi,rax-xor rax,rax-call _printf-mov cl,10-cmp bl,45-xchg cl,bl-je z-lea rdi,[i]-lea rax,[x]-mov rsi,rax-xor rax,rax-call _printf-pop rbx-ret-section .data-default rel-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+/*
+;
+; aarch64-linux-gnu-as printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-ld -lc /usr/aarch64-linux-gnu/lib/libc.so.6 -o printfarm64 printfarm64.o
+;
+;  ***     copy the contents of /usr/aarch64-linux-gnu/lib/ to /lib/
+;
+;  ****    dpkg -L libc6-arm64-cross | grep -i ld-linux-aarch64.so.1
+;          /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1
+;
+;  *****   dpkg -L libc6 | grep -i libc.so.6
+;          /usr/aarch64-linux-gnu/lib/libc.so.6
+;
+;;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/1/2023 5:46 PM EDT - 7/2/2023 5:11 PM EDT
+;
+*/
+.section .text
+.global _start
+.extern printf,putchar,exit
+_start:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "/*
+;
+; aarch64-linux-gnu-as printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-ld -lc /usr/aarch64-linux-gnu/lib/libc.so.6 -o printfarm64 printfarm64.o
+;
+;  ***     copy the contents of /usr/aarch64-linux-gnu/lib/ to /lib/
+;
+;  ****    dpkg -L libc6-arm64-cross | grep -i ld-linux-aarch64.so.1
+;          /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1
+;
+;  *****   dpkg -L libc6 | grep -i libc.so.6
+;          /usr/aarch64-linux-gnu/lib/libc.so.6
+;
+;;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/1/2023 5:46 PM EDT - 7/2/2023 5:11 PM EDT
+;
+*/
+.section .text
+.global _start
+.extern printf,putchar,exit
+_start:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "
+
+/*
+;
+; aarch64-linux-gnu-as printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-gcc -static -o printfarm64 printfarm64.o
+;
+;;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/1/2023 5:46 PM EDT - 7/2/2023 5:11 PM EDT
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "/*
+;
+; aarch64-linux-gnu-as printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-gcc -static -o printfarm64 printfarm64.o
+;
+;;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/1/2023 5:46 PM EDT - 7/2/2023 5:11 PM EDT
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "
+
+/*
+;
+;  arm-linux-gnueabihf-as 32Ge.asm -o 32Ge.o
+;  arm-linux-gnueabihf-gcc -static -o 32Ge 32Ge.o
+;
+;~~ arm32quine v1.0-044
+;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/3/2023 1:40 AM
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+MOV R0,#0
+BL exit
+.section .data
+msg:.asciz "/*
+;
+;  arm-linux-gnueabihf-as 32Ge.asm -o 32Ge.o
+;  arm-linux-gnueabihf-gcc -static -o 32Ge 32Ge.o
+;
+;~~ arm32quine v1.0-044
+;
+;~ House Of Guillermo [GIMO]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf], NYC 7/3/2023 1:40 AM
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+MOV R0,#0
+BL exit
+.section .data
+msg:.asciz "
+
+;
+; pwnqui386nuxx.asm
+;
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 6/24/2023 NYC
+;
+; nasm <dash>f elf32 pwnqui386nuxx.asm
+; gcc <dash>m32 <dash>o pwnqui386nuxx pwnqui386nuxx.o
+;
+;
+global main
+extern printf
+section .text
+main:
+enter 0,0
+mov al,10
+mov bl,45
+z:lea edx,[a]
+mov cx,538
+r:cmp byte [edx],bl
+je s
+jmp u
+s:mov byte [edx],al
+u:inc edx
+dec cx
+cmp cx,0
+jnz r
+push a
+push i
+call printf
+mov al,10
+cmp bl,45
+xchg al,bl
+je z
+push x
+push i
+call printf
+leave
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';-; pwnqui386nuxx.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; 6/24/2023 NYC-;-; nasm <dash>f elf32 pwnqui386nuxx.asm-; gcc <dash>m32 <dash>o pwnqui386nuxx pwnqui386nuxx.o-;-;-global main-extern printf-section .text-main:-enter 0,0-mov al,10-mov bl,45-z:lea edx,[a]-mov cx,538-r:cmp byte [edx],bl-je s-jmp u-s:mov byte [edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+;
+; pwn5_i386four.asm
+;
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 6/25/2023 NYC
+;
+; nasm <dash>f elf32 pwn5_i386four.asm
+; cc <dash>m32 <dash>o pwn5_i386four pwn5_i386four.o
+;
+;
+global main
+extern printf
+section .text
+main:
+enter 0,0
+mov al,10
+mov bl,45
+z:lea edx,[a]
+mov cx,536
+r:cmp byte [edx],bl
+je s
+jmp u
+s:mov byte [edx],al
+u:inc edx
+dec cx
+cmp cx,0
+jnz r
+push a
+push i
+call printf
+mov al,10
+cmp bl,45
+xchg al,bl
+je z
+push x
+push i
+call printf
+leave
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';-; pwn5_i386four.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; 6/25/2023 NYC-;-; nasm <dash>f elf32 pwn5_i386four.asm-; cc <dash>m32 <dash>o pwn5_i386four pwn5_i386four.o-;-;-global main-extern printf-section .text-main:-enter 0,0-mov al,10-mov bl,45-z:lea edx,[a]-mov cx,536-r:cmp byte [edx],bl-je s-jmp u-s:mov byte [edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+;
+; csp.asm
+;
+; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; 10/5/2021 .revision = 6/17/2023
+;
+; nasm -f elf64 csp.asm
+; bcc64 csp.o
+;
+global main
+extern printf
+section .text
+main:sub rsp,28h
+mov al,10
+mov bl,95
+z:lea r9,a
+mov dx,492
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],al
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdx,a
+lea rcx,i
+call printf
+mov al,10
+cmp bl,95
+xchg al,bl
+je z
+lea rdx,x
+lea rcx,i
+call printf
+add rsp,28h
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';_; csp.asm_;_; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; 10/5/2021 .revision = 6/17/2023_;_; nasm -f elf64 csp.asm_; bcc64 csp.o_;_global main_extern printf_section .text_main:sub rsp,28h_mov al,10_mov bl,95_z:lea r9,a_mov dx,492_r:cmp byte[r9],bl_je s_jmp u_s:mov byte[r9],al_u:inc r9_dec dx_cmp dx,0_jnz r_lea rdx,a_lea rcx,i_call printf_mov al,10_cmp bl,95_xchg al,bl_je z_lea rdx,x_lea rcx,i_call printf_add rsp,28h_ret_section .data_x:db 2Ch,32h,37h,68h,2Ch,30h,0_i:db 25h,73h,0_a:db ',27h,0
+
+;
+; pwnquinuxx.asm
+;
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; June 18, 2023 NYC
+;
+; nasm <dash>f elf64 pwnquinuxx.asm
+; gcc <dash>o pwnquinuxx pwnquinuxx.o
+;
+global main
+extern printf
+section .text
+main:push rbx
+mov cl,10
+mov bl,45
+z:lea r9,[a]
+mov dx,612
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],cl
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdi,[i]
+lea rax,[a]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+mov cl,10
+cmp bl,45
+xchg cl,bl
+je z
+lea rdi,[i]
+lea rax,[x]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+pop rbx
+ret
+section .data
+default rel
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';-; pwnquinuxx.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; June 18, 2023 NYC-;-; nasm <dash>f elf64 pwnquinuxx.asm-; gcc <dash>o pwnquinuxx pwnquinuxx.o-;-global main-extern printf-section .text-main:push rbx-mov cl,10-mov bl,45-z:lea r9,[a]-mov dx,612-r:cmp byte[r9],bl-je s-jmp u-s:mov byte[r9],cl-u:inc r9-dec dx-cmp dx,0-jnz r-lea rdi,[i]-lea rax,[a]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-mov cl,10-cmp bl,45-xchg cl,bl-je z-lea rdi,[i]-lea rax,[x]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-pop rbx-ret-section .data-default rel-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+
+;
+; quineB_S_D.asm
+;
+; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+; June 21, 2023 NYC
+;
+; nasm <dash>f elf64 quineB_S_D.asm
+; cc <dash>o quineB_S_D quineB_S_D.o
+;
+global main
+extern printf
+section .text
+main:push rbx
+mov cl,10
+mov bl,45
+z:lea r9,[a]
+mov dx,610
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],cl
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdi,[i]
+lea rax,[a]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+mov cl,10
+cmp bl,45
+xchg cl,bl
+je z
+lea rdi,[i]
+lea rax,[x]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+pop rbx
+ret
+section .data
+default rel
+x:db 2Ch,32h,37h,68h,2Ch,30h,0
+i:db 25h,73h,0
+a:db ';-; quineB_S_D.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; June 21, 2023 NYC-;-; nasm <dash>f elf64 quineB_S_D.asm-; cc <dash>o quineB_S_D quineB_S_D.o-;-global main-extern printf-section .text-main:push rbx-mov cl,10-mov bl,45-z:lea r9,[a]-mov dx,610-r:cmp byte[r9],bl-je s-jmp u-s:mov byte[r9],cl-u:inc r9-dec dx-cmp dx,0-jnz r-lea rdi,[i]-lea rax,[a]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-mov cl,10-cmp bl,45-xchg cl,bl-je z-lea rdi,[i]-lea rax,[x]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-pop rbx-ret-section .data-default rel-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
