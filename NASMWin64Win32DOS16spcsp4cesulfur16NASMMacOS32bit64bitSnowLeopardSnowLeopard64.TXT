@@ -234,6 +234,8 @@ LDR X0,=msg
 BL printf
 MOV X0,34
 BL putchar
+MOV X0,10
+BL putchar
 MOV X0,0
 BL exit
 .section .data
@@ -267,6 +269,8 @@ LDR X0,=msg
 BL printf
 MOV X0,34
 BL putchar
+MOV X0,10
+BL putchar
 MOV X0,0
 BL exit
 .section .data
@@ -294,6 +298,8 @@ LDR X0,=msg
 BL printf
 MOV X0,34
 BL putchar
+MOV X0,10
+BL putchar
 MOV X0,0
 BL exit
 .section .data
@@ -318,6 +324,8 @@ BL putchar
 LDR X0,=msg
 BL printf
 MOV X0,34
+BL putchar
+MOV X0,10
 BL putchar
 MOV X0,0
 BL exit
@@ -345,6 +353,8 @@ BL putchar
 LDR R0,=msg
 BL printf
 MOV R0,#34
+BL putchar
+MOV R0,#10
 BL putchar
 MOV R0,#0
 BL exit
@@ -370,6 +380,8 @@ BL putchar
 LDR R0,=msg
 BL printf
 MOV R0,#34
+BL putchar
+MOV R0,#10
 BL putchar
 MOV R0,#0
 BL exit
