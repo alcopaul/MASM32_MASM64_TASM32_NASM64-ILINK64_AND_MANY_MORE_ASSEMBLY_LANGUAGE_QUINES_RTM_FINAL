@@ -388,14 +388,14 @@ BL exit
 .section .data
 msg:.asciz "
 
-;
+;;;;;;;;;;;;;;;;
 ; pwnqui386nuxx.asm
 ;
 ; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
 ; 6/24/2023 NYC
 ;
-; nasm <dash>f elf32 pwnqui386nuxx.asm
-; gcc <dash>m32 <dash>o pwnqui386nuxx pwnqui386nuxx.o
+; nasm -f elf32 pwnqui386nuxx.asm
+; gcc -m32 -o pwnqui386nuxx pwnqui386nuxx.o
 ;
 ;
 global main
@@ -404,9 +404,9 @@ section .text
 main:
 enter 0,0
 mov al,10
-mov bl,45
+mov bl,95
 z:lea edx,[a]
-mov cx,538
+mov cx,542
 r:cmp byte [edx],bl
 je s
 jmp u
@@ -419,7 +419,7 @@ push a
 push i
 call printf
 mov al,10
-cmp bl,45
+cmp bl,95
 xchg al,bl
 je z
 push x
@@ -428,9 +428,9 @@ call printf
 leave
 ret
 section .data
-x:db 2Ch,32h,37h,68h,2Ch,30h,0
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
 i:db 25h,73h,0
-a:db ';-; pwnqui386nuxx.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; 6/24/2023 NYC-;-; nasm <dash>f elf32 pwnqui386nuxx.asm-; gcc <dash>m32 <dash>o pwnqui386nuxx pwnqui386nuxx.o-;-;-global main-extern printf-section .text-main:-enter 0,0-mov al,10-mov bl,45-z:lea edx,[a]-mov cx,538-r:cmp byte [edx],bl-je s-jmp u-s:mov byte [edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+a:db ';;;;;;;;;;;;;;;;_; pwnqui386nuxx.asm_;_; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; 6/24/2023 NYC_;_; nasm -f elf32 pwnqui386nuxx.asm_; gcc -m32 -o pwnqui386nuxx pwnqui386nuxx.o_;_;_global main_extern printf_section .text_main:_enter 0,0_mov al,10_mov bl,95_z:lea edx,[a]_mov cx,542_r:cmp byte [edx],bl_je s_jmp u_s:mov byte [edx],al_u:inc edx_dec cx_cmp cx,0_jnz r_push a_push i_call printf_mov al,10_cmp bl,95_xchg al,bl_je z_push x_push i_call printf_leave_ret_section .data_x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0_i:db 25h,73h,0_a:db ',27h,0
 
 ;
 ; pwn5_i386four.asm
@@ -518,23 +518,23 @@ x:db 2Ch,32h,37h,68h,2Ch,30h,0
 i:db 25h,73h,0
 a:db ';_; csp.asm_;_; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; 10/5/2021 .revision = 6/17/2023_;_; nasm -f elf64 csp.asm_; bcc64 csp.o_;_global main_extern printf_section .text_main:sub rsp,28h_mov al,10_mov bl,95_z:lea r9,a_mov dx,492_r:cmp byte[r9],bl_je s_jmp u_s:mov byte[r9],al_u:inc r9_dec dx_cmp dx,0_jnz r_lea rdx,a_lea rcx,i_call printf_mov al,10_cmp bl,95_xchg al,bl_je z_lea rdx,x_lea rcx,i_call printf_add rsp,28h_ret_section .data_x:db 2Ch,32h,37h,68h,2Ch,30h,0_i:db 25h,73h,0_a:db ',27h,0
 
-;
+;;;;;;
 ; pwnquinuxx.asm
 ;
 ; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
 ; June 18, 2023 NYC
 ;
-; nasm <dash>f elf64 pwnquinuxx.asm
-; gcc <dash>o pwnquinuxx pwnquinuxx.o
-;
+; nasm -f elf64 pwnquinuxx.asm
+; gcc -o pwnquinuxx pwnquinuxx.o
+;;;;;;
 global main
 extern printf
 section .text
 main:push rbx
 mov cl,10
-mov bl,45
+mov bl,95
 z:lea r9,[a]
-mov dx,612
+mov dx,616
 r:cmp byte[r9],bl
 je s
 jmp u
@@ -549,7 +549,7 @@ mov rsi,rax
 xor rax,rax
 call printf wrt ..plt
 mov cl,10
-cmp bl,45
+cmp bl,95
 xchg cl,bl
 je z
 lea rdi,[i]
@@ -561,9 +561,9 @@ pop rbx
 ret
 section .data
 default rel
-x:db 2Ch,32h,37h,68h,2Ch,30h,0
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
 i:db 25h,73h,0
-a:db ';-; pwnquinuxx.asm-;-; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; June 18, 2023 NYC-;-; nasm <dash>f elf64 pwnquinuxx.asm-; gcc <dash>o pwnquinuxx pwnquinuxx.o-;-global main-extern printf-section .text-main:push rbx-mov cl,10-mov bl,45-z:lea r9,[a]-mov dx,612-r:cmp byte[r9],bl-je s-jmp u-s:mov byte[r9],cl-u:inc r9-dec dx-cmp dx,0-jnz r-lea rdi,[i]-lea rax,[a]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-mov cl,10-cmp bl,45-xchg cl,bl-je z-lea rdi,[i]-lea rax,[x]-mov rsi,rax-xor rax,rax-call printf wrt ..plt-pop rbx-ret-section .data-default rel-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+a:db ';;;;;;_; pwnquinuxx.asm_;_; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; June 18, 2023 NYC_;_; nasm -f elf64 pwnquinuxx.asm_; gcc -o pwnquinuxx pwnquinuxx.o_;;;;;;_global main_extern printf_section .text_main:push rbx_mov cl,10_mov bl,95_z:lea r9,[a]_mov dx,616_r:cmp byte[r9],bl_je s_jmp u_s:mov byte[r9],cl_u:inc r9_dec dx_cmp dx,0_jnz r_lea rdi,[i]_lea rax,[a]_mov rsi,rax_xor rax,rax_call printf wrt ..plt_mov cl,10_cmp bl,95_xchg cl,bl_je z_lea rdi,[i]_lea rax,[x]_mov rsi,rax_xor rax,rax_call printf wrt ..plt_pop rbx_ret_section .data_default rel_x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0_i:db 25h,73h,0_a:db ',27h,0
 
 ;
 ; quineB_S_D.asm
