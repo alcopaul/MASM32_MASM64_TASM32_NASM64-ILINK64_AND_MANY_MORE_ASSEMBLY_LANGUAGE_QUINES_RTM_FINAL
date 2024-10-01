@@ -1,62 +1,63 @@
-;
-; spc.asm
+;;;;;;;;;;;
+; sulfur16.asm
 ;
 ; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
-; 10/5/2021 .revision = 1/27/2023
+; 10/7/2021 .revision 2 = 2/1/2023
 ;
-; nasm -f win64 spc.asm
-; link spc.obj /subsystem:console /defaultlib:msvcrt64.lib /entry:m /largeaddressaware:no
+; nasm -f bin -o sulfur16.com sulfur16.asm
 ;
-global m
-extern printf
-section .text
-m:sub rsp,28h
-mov al,10
-mov bl,95
-z:lea r9,a
-mov dx,567
-r:cmp byte[r9],bl
+org 100h
+mov al,13
+mov ah,95
+z:lea bx,[k]
+mov cx,551
+r:cmp byte[bx],ah
 je s
 jmp u
-s:mov byte[r9],al
-u:inc r9
-dec dx
-cmp dx,0
+s:mov byte[bx],al
+cmp al,95
+je c
+mov byte[bx+1],10
+jmp u
+c:mov byte[bx+1],95
+u:inc bx
+dec cx
+cmp cx,0
 jnz r
-lea rdx,a
-lea rcx,i
-call printf
-mov al,10
-cmp bl,95
-xchg al,bl
+push ax
+lea dx,[k]
+mov ah,9
+int 21h
+pop ax
+cmp al,13
+mov ah,95
+xchg al,ah
 je z
-lea rdx,x
-lea rcx,i
-call printf
-add rsp,28h
-ret
-section .data
-x:db 2Ch,32h,37h,68h,2Ch,30h,0
-i:db 25h,73h,0
-a:db ';_; spc.asm_;_; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]_; 10/5/2021 .revision = 1/27/2023_;_; nasm -f win64 spc.asm_; link spc.obj /subsystem:console /defaultlib:msvcrt64.lib /entry:m /largeaddressaware:no_;_global m_extern printf_section .text_m:sub rsp,28h_mov al,10_mov bl,95_z:lea r9,a_mov dx,567_r:cmp byte[r9],bl_je s_jmp u_s:mov byte[r9],al_u:inc r9_dec dx_cmp dx,0_jnz r_lea rdx,a_lea rcx,i_call printf_mov al,10_cmp bl,95_xchg al,bl_je z_lea rdx,x_lea rcx,i_call printf_add rsp,28h_ret_section .data_x:db 2Ch,32h,37h,68h,2Ch,30h,0_i:db 25h,73h,0_a:db ',27h,0
+lea dx,[x]
+mov ah,9
+int 21h
+int 20h
+x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h
+k:db ';;;;;;;;;;;__; sulfur16.asm__;__; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]__; 10/7/2021 .revision 2 = 2/1/2023__;__; nasm -f bin -o sulfur16.com sulfur16.asm__;__org 100h__mov al,13__mov ah,95__z:lea bx,[k]__mov cx,551__r:cmp byte[bx],ah__je s__jmp u__s:mov byte[bx],al__cmp al,95__je c__mov byte[bx+1],10__jmp u__c:mov byte[bx+1],95__u:inc bx__dec cx__cmp cx,0__jnz r__push ax__lea dx,[k]__mov ah,9__int 21h__pop ax__cmp al,13__mov ah,95__xchg al,ah__je z__lea dx,[x]__mov ah,9__int 21h__int 20h__x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h__k:db ',27h,24h
 
-;
+;;
 ; sp4ce.asm
 ;
 ; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
 ; 10/6/2021 .revision = 1/27/2023
 ;
-; nasm <dash>f win32 sp4ce.asm
-; link sp4ce.obj /subsystem:console /defaultlib:32msvcrt.lib /entry:m
+; nasm -f win32 sp4ce.asm
+; link sp4ce.obj /subsystem:console /defaultlib:msvcrt.lib kernel32.lib legacy_stdio_definitions.lib
+; legacy_stdio_wide_specifiers.lib ucrt.lib /merge:.CRT=.rdata /entry:m
 ;
 global m
 extern _printf
 section .text
 m:enter 0,0
 mov al,10
-mov bl,45
+mov bl,126
 z:lea edx,a
-mov cx,543
+mov cx,648
 r:cmp byte[edx],bl
 je s
 jmp u
@@ -69,7 +70,7 @@ push a
 push i
 call _printf
 mov al,10
-cmp bl,45
+cmp bl,126
 xchg al,bl
 je z
 push x
@@ -78,51 +79,52 @@ call _printf
 leave
 ret
 section .data
-x:db 2Ch,32h,37h,68h,2Ch,30h,0
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
 i:db 25h,73h,0
-a:db ';-; sp4ce.asm-;-; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]-; 10/6/2021 .revision = 1/27/2023-;-; nasm <dash>f win32 sp4ce.asm-; link sp4ce.obj /subsystem:console /defaultlib:32msvcrt.lib /entry:m-;-global m-extern _printf-section .text-m:enter 0,0-mov al,10-mov bl,45-z:lea edx,a-mov cx,543-r:cmp byte[edx],bl-je s-jmp u-s:mov byte[edx],al-u:inc edx-dec cx-cmp cx,0-jnz r-push a-push i-call _printf-mov al,10-cmp bl,45-xchg al,bl-je z-push x-push i-call _printf-leave-ret-section .data-x:db 2Ch,32h,37h,68h,2Ch,30h,0-i:db 25h,73h,0-a:db ',27h,0
+a:db ';;~; sp4ce.asm~;~; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]~; 10/6/2021 .revision = 1/27/2023~;~; nasm -f win32 sp4ce.asm~; link sp4ce.obj /subsystem:console /defaultlib:msvcrt.lib kernel32.lib legacy_stdio_definitions.lib~; legacy_stdio_wide_specifiers.lib ucrt.lib /merge:.CRT=.rdata /entry:m~;~global m~extern _printf~section .text~m:enter 0,0~mov al,10~mov bl,126~z:lea edx,a~mov cx,648~r:cmp byte[edx],bl~je s~jmp u~s:mov byte[edx],al~u:inc edx~dec cx~cmp cx,0~jnz r~push a~push i~call _printf~mov al,10~cmp bl,126~xchg al,bl~je z~push x~push i~call _printf~leave~ret~section .data~x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0~i:db 25h,73h,0~a:db ',27h,0
 
 ;
-; sulfur16.asm
+; spc.asm
 ;
 ; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
-; 10/7/2021 .revision 2 = 2/1/2023
+; 10/5/2021 .revision = 1/27/2023
 ;
-; nasm <dash>f bin <dash>o sulfur16.com sulfur16.asm
+; nasm -f win64 spc.asm
+; link spc.obj /subsystem:console /defaultlib:msvcrt.lib kernel32.lib legacy_stdio_definitions.lib
+; legacy_stdio_wide_specifiers.lib ucrt.lib /entry:m /largeaddressaware:no /merge:.CRT=.rdata
 ;
-org 100h
-mov al,13
-mov ah,45
-z:lea bx,[k]
-mov cx,551
-r:cmp byte[bx],ah
+global m
+extern printf
+section .text
+m:sub rsp,28h
+mov al,10
+mov bl,126
+z:lea r9,a
+mov dx,676
+r:cmp byte[r9],bl
 je s
 jmp u
-s:mov byte[bx],al
-cmp al,45
-je c
-mov byte[bx+1],10
-jmp u
-c:mov byte[bx+1],45
-u:inc bx
-dec cx
-cmp cx,0
+s:mov byte[r9],al
+u:inc r9
+dec dx
+cmp dx,0
 jnz r
-push ax
-lea dx,[k]
-mov ah,9
-int 21h
-pop ax
-cmp al,13
-mov ah,45
-xchg al,ah
+lea rdx,a
+lea rcx,i
+call printf
+mov al,10
+cmp bl,126
+xchg al,bl
 je z
-lea dx,[x]
-mov ah,9
-int 21h
-int 20h
-x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h
-k:db ';--; sulfur16.asm--;--; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]--; 10/7/2021 .revision 2 = 2/1/2023--;--; nasm <dash>f bin <dash>o sulfur16.com sulfur16.asm--;--org 100h--mov al,13--mov ah,45--z:lea bx,[k]--mov cx,551--r:cmp byte[bx],ah--je s--jmp u--s:mov byte[bx],al--cmp al,45--je c--mov byte[bx+1],10--jmp u--c:mov byte[bx+1],45--u:inc bx--dec cx--cmp cx,0--jnz r--push ax--lea dx,[k]--mov ah,9--int 21h--pop ax--cmp al,13--mov ah,45--xchg al,ah--je z--lea dx,[x]--mov ah,9--int 21h--int 20h--x:db 2Ch,32h,37h,68h,2Ch,32h,34h,68h,24h--k:db ',27h,24h
+lea rdx,x
+lea rcx,i
+call printf
+add rsp,28h
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
+i:db 25h,73h,0
+a:db ';~; spc.asm~;~; alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]~; 10/5/2021 .revision = 1/27/2023~;~; nasm -f win64 spc.asm~; link spc.obj /subsystem:console /defaultlib:msvcrt.lib kernel32.lib legacy_stdio_definitions.lib~; legacy_stdio_wide_specifiers.lib ucrt.lib /entry:m /largeaddressaware:no /merge:.CRT=.rdata~;~global m~extern printf~section .text~m:sub rsp,28h~mov al,10~mov bl,126~z:lea r9,a~mov dx,676~r:cmp byte[r9],bl~je s~jmp u~s:mov byte[r9],al~u:inc r9~dec dx~cmp dx,0~jnz r~lea rdx,a~lea rcx,i~call printf~mov al,10~cmp bl,126~xchg al,bl~je z~lea rdx,x~lea rcx,i~call printf~add rsp,28h~ret~section .data~x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0~i:db 25h,73h,0~a:db ',27h,0
 
 ; by alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
 ; January 25, 2023 NYC
