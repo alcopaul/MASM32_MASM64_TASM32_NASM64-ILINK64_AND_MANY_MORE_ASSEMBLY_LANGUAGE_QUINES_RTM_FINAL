@@ -9,9 +9,9 @@ Table Of Contents
 
 NASMWin64Win32DOS16spcsp4cesulfur16NASMMacOS32bit64bitSnowLeopardSnowLeopard64.TXT
 
-- spc.asm
-- sp4ce.asm
 - sulfur16.asm
+- sp4ce.asm
+- spc.asm
 - GosuIchiban
 - 6GosuIchiban4
 - printfarm64 (Dynamic)
