@@ -64,7 +64,7 @@ tiktok: https://www.tiktok.com/@alcopaul
 
 brigada ocho: brigadaocho@yahoo.com
 
-UPDATED: 1/4/2025 5:16 PM EDT
+UPDATED: 1/4/2025 5:18 PM EST
 NYC, THE VAMPIRE STATE
 
 ### Mirror ###
