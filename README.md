@@ -56,7 +56,7 @@ Cite The Author "by alCoPaUL[GIMO][GOTH][As][aBrA][NPA][b8][BCVG][rRlf] | alcopa
 alCoPaUL[GIMO][GOTH][As][aBrA][NPA][b8][BCVG][rRlf] | alcopaul@yahoo.com
 
 
-website: http://www.perrun.su
+website: http://www.perrun.su | https://alcopaul.github.io
 
 meme jpeg virii: https://www.deviantart.com/alcopaul
 
@@ -64,18 +64,8 @@ tiktok: https://www.tiktok.com/@alcopaul
 
 brigada ocho: brigadaocho@yahoo.com
 
-UPDATED: 10/1/2024 2:47 PM
+UPDATED: 1/4/2025 5:16 PM EDT
 NYC, THE VAMPIRE STATE
-
-UPDATED: 10/1/2024 1:01 PM
-
-UPDATED: 9/26/2024 4:01 PM
-
-UPDATED: 9/25/2024 3:02 PM
-
-UPDATED: 9/23/2024 3:02 PM
-
-8/29/2024 7:34 PM 
 
 ### Mirror ###
 
