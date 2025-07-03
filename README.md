@@ -72,5 +72,5 @@ https://bitbucket.org/alcopaul/datassemblylanguagequines/src/ThunderRT6Main
 
 ### UPDATES ###
 
-- Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools
+- Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools.
   
