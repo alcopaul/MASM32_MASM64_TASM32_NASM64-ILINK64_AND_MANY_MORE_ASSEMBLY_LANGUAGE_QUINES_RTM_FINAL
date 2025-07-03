@@ -60,13 +60,17 @@ website: http://www.perrun.su | https://alcopaul.github.io
 
 meme jpeg virii: https://www.deviantart.com/alcopaul
 
-tiktok: https://www.tiktok.com/@alcopaul
 
 brigada ocho: brigadaocho@yahoo.com
 
-UPDATED: 1/4/2025 5:18 PM EST
+UPDATED: 7/2/2025
 NYC, THE VAMPIRE STATE
 
 ### Mirror ###
 
 https://bitbucket.org/alcopaul/datassemblylanguagequines/src/ThunderRT6Main
+
+### UPDATES ###
+
+- Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools
+  
