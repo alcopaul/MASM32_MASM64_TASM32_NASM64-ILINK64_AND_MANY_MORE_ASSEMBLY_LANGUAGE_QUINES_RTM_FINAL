@@ -72,6 +72,6 @@ https://bitbucket.org/alcopaul/datassemblylanguagequines/src/ThunderRT6Main
 
 ### UPDATES ###
 
-- Uploaded firebirdx.asm and fenghuangx.asm for them to neatly display on Wine CMD Console (Ubuntu 24.04 LTS).
+- Uploaded firebirdx.asm and fenghuangx.asm which neatly display on Wine CMD Console (Ubuntu 24.04 LTS).
 - Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools.
   
