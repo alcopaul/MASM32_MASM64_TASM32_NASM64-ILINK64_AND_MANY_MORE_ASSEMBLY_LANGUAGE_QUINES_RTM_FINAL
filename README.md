@@ -64,7 +64,8 @@ meme jpeg virii: https://www.deviantart.com/alcopaul
 brigada ocho: brigadaocho@yahoo.com
 
 UPDATED: 4/02/2026
-NYC, THE VAMPIRE STATE
+NYC
+THE VAMPIRE STATE
 
 ### Mirror ###
 
