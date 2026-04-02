@@ -1,0 +1,221 @@
+
+
+;;;;;;;;;;;;;;;;
+; pwn5_i386four.asm
+;
+; by alCoPaUL [GIMO][As]
+; 4/02/2026 NYC
+;
+; nasm -f elf32 pwn5_i386four.asm
+; cc -m32 -o pwn5_i386four pwn5_i386four.o -no-pie -Wl,-z,noexecstack
+;
+;
+global main
+extern printf
+section .text
+main:
+enter 0,0
+mov al,10
+mov bl,126
+z:lea edx,[a]
+mov cx,542
+r:cmp byte [edx],bl
+je s
+jmp u
+s:mov byte [edx],al
+u:inc edx
+dec cx
+cmp cx,0
+jnz r
+push a
+push i
+call printf
+mov al,10
+cmp bl,126
+xchg al,bl
+je z
+push x
+push i
+call printf
+leave
+ret
+section .data
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
+i:db 25h,73h,0
+a:db ';;;;;;;;;;;;;;;;~; pwn5_i386four.asm~;~; by alCoPaUL [GIMO][As]~; 4/02/2026 NYC~;~; nasm -f elf32 pwn5_i386four.asm~; cc -m32 -o pwn5_i386four pwn5_i386four.o -no-pie -Wl,-z,noexecstack~;~;~global main~extern printf~section .text~main:~enter 0,0~mov al,10~mov bl,126~z:lea edx,[a]~mov cx,542~r:cmp byte [edx],bl~je s~jmp u~s:mov byte [edx],al~u:inc edx~dec cx~cmp cx,0~jnz r~push a~push i~call printf~mov al,10~cmp bl,126~xchg al,bl~je z~push x~push i~call printf~leave~ret~section .data~x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0~i:db 25h,73h,0~a:db ',27h,0
+
+
+;;;;;;;;;;;;;
+; quineB_S_D.asm
+;
+; by alCoPaUL [GIMO][As][aBrA]
+; April 02, 2026 NYC
+;
+; nasm -f elf64 quineB_S_D.asm
+; cc -o quineB_S_D quineB_S_D.o -Wl,-z,noexecstack
+;
+global main
+extern printf
+section .text
+main:push rbx
+mov cl,10
+mov bl,126
+z:lea r9,[a]
+mov dx,616
+r:cmp byte[r9],bl
+je s
+jmp u
+s:mov byte[r9],cl
+u:inc r9
+dec dx
+cmp dx,0
+jnz r
+lea rdi,[i]
+lea rax,[a]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+mov cl,10
+cmp bl,126
+xchg cl,bl
+je z
+lea rdi,[i]
+lea rax,[x]
+mov rsi,rax
+xor rax,rax
+call printf wrt ..plt
+pop rbx
+ret
+section .data
+default rel
+x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0
+i:db 25h,73h,0
+a:db ';;;;;;;;;;;;;~; quineB_S_D.asm~;~; by alCoPaUL [GIMO][As][aBrA]~; April 02, 2026 NYC~;~; nasm -f elf64 quineB_S_D.asm~; cc -o quineB_S_D quineB_S_D.o -Wl,-z,noexecstack~;~global main~extern printf~section .text~main:push rbx~mov cl,10~mov bl,126~z:lea r9,[a]~mov dx,616~r:cmp byte[r9],bl~je s~jmp u~s:mov byte[r9],cl~u:inc r9~dec dx~cmp dx,0~jnz r~lea rdi,[i]~lea rax,[a]~mov rsi,rax~xor rax,rax~call printf wrt ..plt~mov cl,10~cmp bl,126~xchg cl,bl~je z~lea rdi,[i]~lea rax,[x]~mov rsi,rax~xor rax,rax~call printf wrt ..plt~pop rbx~ret~section .data~default rel~x:db 2Ch,32h,37h,68h,2Ch,30h,0Ah,0~i:db 25h,73h,0~a:db ',27h,0
+
+
+/*
+;
+;  arm-linux-gnueabihf-as -W 32Ge.asm -o 32Ge.o
+;  arm-linux-gnueabihf-gcc -static -o 32Ge 32Ge.o -Wl,-z,noexecstack
+;  ./32Ge
+;
+;  arm32quine v1.0-5441
+;
+;~~ HAsAsIN [NaCl], beth GviLLErMo [GIMO], Zelotes ni Isa [ZnI]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+;~~ NYC 7/3/2023 1:40 AM & NYC 4/2/2026 3:17 PM
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+MOV R0,#10
+BL putchar
+MOV R0,#0
+BL exit
+.section .data
+msg:.asciz "/*
+;
+;  arm-linux-gnueabihf-as -W 32Ge.asm -o 32Ge.o
+;  arm-linux-gnueabihf-gcc -static -o 32Ge 32Ge.o -Wl,-z,noexecstack
+;  ./32Ge
+;
+;  arm32quine v1.0-5441
+;
+;~~ HAsAsIN [NaCl], beth GviLLErMo [GIMO], Zelotes ni Isa [ZnI]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+;~~ NYC 7/3/2023 1:40 AM & NYC 4/2/2026 3:17 PM
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+LDR R0,=msg
+BL printf
+MOV R0,#34
+BL putchar
+MOV R0,#10
+BL putchar
+MOV R0,#0
+BL exit
+.section .data
+msg:.asciz "
+
+
+/*
+;
+; aarch64-linux-gnu-as -W printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-gcc -static -o printfarm64 printfarm64.o
+; ./printfarm64
+;
+; arm64quine 1.33.4154
+;
+;~~ HAsAsIN [NaCl], beth GviLLErMo [GIMO], Zelotes ni Isa [ZnI]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+;~~ NYC 7/1/2023 5:46 PM EDT - NYC 4/2/2026 3:14 PM EDT
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,10
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "/*
+;
+; aarch64-linux-gnu-as -W printfarm64.asm -o printfarm64.o
+; aarch64-linux-gnu-gcc -static -o printfarm64 printfarm64.o
+; ./printfarm64
+;
+; arm64quine 1.33.4154
+;
+;~~ HAsAsIN [NaCl], beth GviLLErMo [GIMO], Zelotes ni Isa [ZnI]
+;~~ alCoPaUL [GIMO][As][aBrA][NPA][b8][BCVG][rRlf]
+;~~ NYC 7/1/2023 5:46 PM EDT - NYC 4/2/2026 3:14 PM EDT
+;
+*/
+.section .text
+.global main
+.extern printf,putchar,exit
+main:
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+LDR X0,=msg
+BL printf
+MOV X0,34
+BL putchar
+MOV X0,10
+BL putchar
+MOV X0,0
+BL exit
+.section .data
+msg:.asciz "
+
+
