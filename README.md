@@ -63,9 +63,62 @@ meme jpeg virii: https://www.deviantart.com/alcopaul
 
 brigada ocho: brigadaocho@yahoo.com
 
-UPDATED: 4/02/2026
-NYC
-THE VAMPIRE STATE
+UPDATED: 4/4
+- sulfur16.asm
+- sp4ce.asm
+- spc.asm
+- GosuIchiban
+- 6GosuIchiban4
+- printfarm64 (Dynamic)
+- printfarm64 (Static)
+- 32Ge
+- pwnqui386nuxx.asm
+- pwn5_i386four.asm
+- csp.asm (10/5/2021-6/17/2023)
+- pwnquinuxx.asm
+- quineB_S_D.asm
+
+GOAT.asm
+
+ARIES.asm
+
+benu.asm
+
+firebird.asm
+
+fenghuang.asm
+
+csp.asm (2/27/2023-9/23/2024)
+
+### What are quines? ###
+
+https://en.wikipedia.org/wiki/Quine_(computing)
+
+### How do I get set up? ###
+
+- USE THE LATEST EWDK & EMBARCADERO VERSIONS OF TASM32 AND ILINK32 TO ASSEMBLE AND LINK THE SOURCES.
+- YOU WILL HAVE TO USE THE IMPLIB UTILITY FROM THE EMBARCADERO BINARIES TO GET YOUR MSVCRT.LIB FROM THE MSVCRT.DLL INSTALLED IN YOUR COMPUTER FOR BUILDING THE TASM32 QUINE.
+- THE ENVIRONMENT USED TO RUN THIS IS THE WINDOWS 11 CONSOLE WINDOW AND YOU JUST HAVE TO RESIZE IT TO FULL SCREEN TO SEE THE PROPER AND IDEAL TEXT FORMATTING OF THE QUINES.
+- FOR THE 16-BIT QUINES, TASM & TLINK ARE FROM TURBO ASSEMBLER 5.0 (PLUS ALL THE LATEST PATCHES) AND ML & LINK ARE FROM MICROSOFT MACRO ASSEMBLER 6.1, WITH ML.EXE PATCHED TO 
+  6.11D AND DOSBOX-X IS USED AS THE CONSOLE ENVIRONMENT.
+  
+### Licensing ###
+
+Cite The Author "by alCoPaUL[GIMO][GOTH][As][aBrA][NPA][b8][BCVG][rRlf] | alcopaul@yahoo.com" If You Decide To Use Any Of The Source Codes Here In Any Publications. Monetary Tips Are Also Welcome.
+
+### Who do I talk to (For Permission And/Or Tips)? ###
+
+alCoPaUL[GIMO][GOTH][As][aBrA][NPA][b8][BCVG][rRlf] | alcopaul@yahoo.com
+
+
+website: http://www.perrun.su | https://alcopaul.github.io
+
+meme jpeg virii: https://www.deviantart.com/alcopaul
+
+Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
+Attach files by dragging & dropping, selecting or pasting them.
+/2026
+NYC, THE VAMPIRE STATE
 
 ### Mirror ###
 
