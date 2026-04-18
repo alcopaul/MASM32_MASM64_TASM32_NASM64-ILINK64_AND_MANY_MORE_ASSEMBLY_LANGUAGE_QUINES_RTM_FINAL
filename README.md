@@ -125,7 +125,7 @@ https://bitbucket.org/alcopaul/datassemblylanguagequines/src/ThunderRT6Main
 
 ### UPDATES ###
 
-- Trying to be relevant still trying to be relevant..
+- Shitfucks trying to be relevant are now shitfucks trying their hardest to be relevant..
 - Uploaded x86x64arm32arm64QUINES.txt (Linux x86 and ARM Assembly Language Quines) with polished, warning-less commandline results after assembling and linking them (OS: Ubuntu 24.04 LTS)..
 - Uploaded firebirdx.asm and fenghuangx.asm which neatly display on Terminal (Ubuntu 24.04 LTS) when run in Wine Interpreter Mode (wine firebirdx.exe with Terminal sized on its appropriate length).
 - Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools.
