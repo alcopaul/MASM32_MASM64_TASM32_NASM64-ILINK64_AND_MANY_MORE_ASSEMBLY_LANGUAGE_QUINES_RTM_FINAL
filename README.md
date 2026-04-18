@@ -115,10 +115,9 @@ website: http://www.perrun.su | https://alcopaul.github.io
 
 meme jpeg virii: https://www.deviantart.com/alcopaul
 
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-Attach files by dragging & dropping, selecting or pasting them.
-/2026
-NYC, THE VAMPIRE STATE
+brigada ocho: brigadaocho@yahoo.com
+
+04/18/2026 | NYC, THE VAMPIRE STATE
 
 ### Mirror ###
 
@@ -126,6 +125,7 @@ https://bitbucket.org/alcopaul/datassemblylanguagequines/src/ThunderRT6Main
 
 ### UPDATES ###
 
+- Trying to be relevant still trying to be relevant..
 - Uploaded x86x64arm32arm64QUINES.txt (Linux x86 and ARM Assembly Language Quines) with polished, warning-less commandline results after assembling and linking them (OS: Ubuntu 24.04 LTS)..
 - Uploaded firebirdx.asm and fenghuangx.asm which neatly display on Terminal (Ubuntu 24.04 LTS) when run in Wine Interpreter Mode (wine firebirdx.exe with Terminal sized on its appropriate length).
 - Uploaded x64x86quines.zip containing benu.asm, csp.asm, fenghuang.asm & firebird.asm assembled and linked with the latest build tools.
